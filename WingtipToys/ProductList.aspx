@@ -30,36 +30,35 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                        <img src="/Catalog/Images/Thumbs/<%#:Item.ImagePath%>"
-                                            width="100" height="75" style="border: solid" /></a>
+                                  <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                    <image src='/Catalog/Images/Thumbs/<%#:Item.ImagePath%>'
+                                      width="100" height="75" border="1" />
+                                  </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                        <span>
-                                            <%#:Item.ProductName%>
-                                        </span>
-                                    </a>
-                                    <br />
-                                    <span>
-                                        <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
+                                  <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                    <%#:Item.ProductName%>
+                                  </a>
+                                  <br />
+                                  <span>
+                                    <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
+                                  </span>
+                                  <br />
+                                  <a href="/AddToCart.aspx?productID=<%#:Item.ProductID %>">
+                                    <span class="ProductListItem">
+                                      <b>Add To Cart<b>
                                     </span>
-                                    <br />
-                                    <a href="/AddToCart.aspx?productID=<%#:Item.ProductID %>">               
-                                        <span class="ProductListItem">
-                                            <b>Add To Cart<b>
-                                        </span>           
-                                    </a>
+                                  </a>
                                 </td>
-                            </tr>
-                            <tr>
+                              </tr>
+                              <tr>
                                 <td>&nbsp;</td>
-                            </tr>
+                              </tr>
                         </table>
-                        </p>
-                    </td>
+                            </p>
+                   </td>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <table style="width:100%;">
